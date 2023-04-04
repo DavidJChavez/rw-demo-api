@@ -3,17 +3,18 @@
 package model
 
 type NewUser struct {
-	FirstName string `json:"first_name"`
-	LastName  string `json:"last_name"`
-	Phone     string `json:"phone"`
-	Email     string `json:"email"`
+	FirstName string `json:"first_name" bson:"first_name"`
+	LastName  string `json:"last_name" bson:"last_name"`
+	Phone     string `json:"phone" bson:"phone"`
+	Email     string `json:"email" bson:"email"`
+	CreatedAt string `json:"created_at" bson:"created_at"`
 }
 
 type User struct {
-	ID        string `json:"id"`
-	CreatedAt string `json:"created_at"`
-	FirstName string `json:"first_name"`
-	LastName  string `json:"last_name"`
-	Phone     string `json:"phone"`
-	Email     string `json:"email"`
+	ID        string `json:"id" bson:"_id"`
+	CreatedAt string `json:"created_at" bson:"created_at"`
+	FirstName string `json:"first_name" bson:"first_name"`
+	LastName  string `json:"last_name" bson:"last_name"`
+	Phone     string `json:"phone" bson:"phone"`
+	Email     string `json:"email" bson:"email"`
 }

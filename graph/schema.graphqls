@@ -20,6 +20,7 @@ input NewUser {
   last_name: String!
   phone: String!
   email: String!
+  created_at: String!
 }
 
 type Mutation {

@@ -1,6 +1,7 @@
-package main
+package server
 
 import (
+	"DavidJChavez/rw-demo-api/configs"
 	"DavidJChavez/rw-demo-api/graph"
 	"log"
 	"net/http"
@@ -10,13 +11,10 @@ import (
 	"github.com/99designs/gqlgen/graphql/playground"
 )
 
-const defaultPort = "8080"
+var Db *configs.DB
 
-func main() {
+func RunServer() {
 	port := os.Getenv("PORT")
-	if port == "" {
-		port = defaultPort
-	}
 
 	srv := handler.NewDefaultServer(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{}}))
 
